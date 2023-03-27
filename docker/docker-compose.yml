@@ -26,3 +26,34 @@ services:
       MYSQL_DATABASE: miniautorizador
       MYSQL_ROOT_PASSWORD:
       MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
+
+  prometheus:
+    image: prom/prometheus
+    network_mode: host
+    container_name: prometheus-container
+    volumes:
+      - prometheus-storage:/var/lib/prometheus
+      - C:/tmp/prometheus.yml:/etc/prometheus/prometheus.yml #criar uma pasta no C:\tmp e copiar o arquivo prometheus.yml
+        # na linha acima é feito um binding do arquivo prometheus.yml no path do windows para o path do wsl
+    command:
+      - '--config.file=/etc/prometheus/prometheus.yml'
+    ports:
+      - "9090:9090"
+    restart: always
+
+  grafana:
+    image: grafana/grafana-oss
+    container_name: grafana-container
+    depends_on:
+      - prometheus
+    ports:
+      - "3000:3000"
+    volumes:
+      - grafana-storage:/opt/grafana/data
+    environment:
+      - GF_SECURITY_ADMIN_PASSWORD=admin
+      - GF_SERVER_DOMAIN=localhost
+
+volumes:
+  prometheus-storage: {}
+  grafana-storage: {}
