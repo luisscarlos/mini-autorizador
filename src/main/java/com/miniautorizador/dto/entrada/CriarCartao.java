@@ -16,10 +16,10 @@ import javax.validation.constraints.Size;
 @NoArgsConstructor
 public class CriarCartao {
 
-    @NotNull
-    @Size(min = 16, message = "O cartão deve ter 16 números")
-    @Size(max = 16, message = "O cartão deve ter 16 números")
-    @Schema(description = "Número do cartão", example = "6549873025634501", required = true)
+//    @NotNull
+//    @Size(min = 16, message = "O cartão deve ter 16 números")
+//    @Size(max = 16, message = "O cartão deve ter 16 números")
+    @Schema(description = "Número do cartão", example = "6549873025634501"/*, required = true*/)
     private String numeroCartao;
 
     @NotNull

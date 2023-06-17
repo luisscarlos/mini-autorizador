@@ -8,6 +8,12 @@ spring:
     url: ${DATABASE_URL:jdbc:mysql://localhost:3306/miniautorizador}
     username: root
     password:
+#    tomcat:
+#      max-active: 500000
+#      initial-size: 400000
+#    hikari:
+#      maximum-pool-size: 500000
+#      max-lifetime: 500000
 
 server:
   error:
@@ -23,13 +29,6 @@ spring-doc:
 management:
   endpoints:
     web:
-      base-path: /actuator
       exposure:
-        include: [ "health","prometheus", "metrics" ]
-  endpoint:
-    health:
-      show-details: always
-    metrics:
-      enabled: true
-    prometheus:
-      enabled: true
+        include:
+          - prometheus

@@ -29,7 +29,7 @@ services:
 
   prometheus:
     image: prom/prometheus
-    network_mode: host
+#    network_mode: host
     container_name: prometheus-container
     volumes:
       - prometheus-storage:/var/lib/prometheus
@@ -37,6 +37,7 @@ services:
         # na linha acima é feito um binding do arquivo prometheus.yml no path do windows para o path do wsl
     command:
       - '--config.file=/etc/prometheus/prometheus.yml'
+#      - '--web.enable-admin-api'
     ports:
       - "9090:9090"
     restart: always

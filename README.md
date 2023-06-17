@@ -1,5 +1,9 @@
 # MINI AUTORIZADOR
-Desafio desenvolvido para integrar o time de desenvolvimento da [VR Benefícios](https://www.vr.com.br/) através da [Elumini](https://www.elumini.com.br/pb/). Descrição do desafio e requisitos no arquivo **[DESAFIO.md](https://github.com/luisscarlos/mini-autorizador/blob/main/DESAFIO.md)**
+Esse projeto foi um desafio desenvolvido para integrar o time de desenvolvimento da [VR Benefícios](https://www.vr.com.br/) através da [Elumini](https://www.elumini.com.br/pb/). Descrição do desafio e requisitos no arquivo **[DESAFIO.md](https://github.com/luisscarlos/mini-autorizador/blob/main/DESAFIO.md)**
+
+- Nessa branch ele está sendo usado como base para o meu [TCC](https://www.overleaf.com/read/chkrsntzjqwd) no Instituto Federal do Ceará(IFCE) sobre Observabilidade de aplicações Spring Boot usando Prometheus e Grafana.
+- O arquivo de testes de carga no JMeter podem ser encontrados na pasta resources/Testes de carga TCC.jmx.
+- Para facilitar a aplicação de alguns cenários de testes, alterações no código foram feitas, o que implica a não utilização de boas práticas. Para verificar micro serviço com o código original, utilizar a branch main. 
 
 ## Build status e analises do sonar
 [![build](https://github.com/luisscarlos/mini-autorizador/actions/workflows/build.yml/badge.svg)](https://github.com/luisscarlos/mini-autorizador/actions/workflows/build.yml)

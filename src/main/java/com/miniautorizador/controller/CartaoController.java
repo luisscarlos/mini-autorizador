@@ -14,6 +14,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.math.BigDecimal;
+import java.util.List;
 
 import static org.springframework.http.HttpStatus.*;
 
@@ -53,5 +54,10 @@ public class CartaoController implements CartaoContract {
             log.error("ERRO: Cartão inexistente.");
             return new ResponseEntity<>(null, NOT_FOUND);
         }
+    }
+
+    @Override
+    public ResponseEntity<List<CartaoResponse>> listarCartoes() {
+        return new ResponseEntity<>(cartaoService.listarCartoes(), OK);
     }
 }

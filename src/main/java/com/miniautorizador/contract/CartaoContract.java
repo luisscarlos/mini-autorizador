@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 import java.math.BigDecimal;
+import java.util.List;
 
 @Tag(name = "1. Cartão", description = "Gerenciamento de cartões.")
 @RequestMapping(value = "/cartoes")
@@ -35,5 +36,8 @@ public interface CartaoContract {
     @GetMapping(value = "/{numeroCartao}")
     ResponseEntity<BigDecimal> obterSaldoCartao(@PathVariable String numeroCartao);
 
+    @Operation(summary = "Listar todos cartões")
+    @GetMapping()
+    ResponseEntity<List<CartaoResponse>> listarCartoes();
 
 }
